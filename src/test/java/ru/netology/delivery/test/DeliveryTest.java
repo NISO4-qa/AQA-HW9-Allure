@@ -40,12 +40,6 @@ public class DeliveryTest {
         $(".button").click();
         $("[data-test-id='success-notification'] .notification__title").shouldBe(visible).shouldBe(exactText("Успешно!"));
         $("[data-test-id='success-notification'] .notification__content").shouldBe(visible).shouldBe(exactText("Встреча успешно запланирована на " + firstMeetDate));
-        try {
-            Thread.sleep(2000);
-            // Thread.sleep(1000); is Equal to 1 second
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(SecondDateMeet);
         $(".button").click();
@@ -54,12 +48,6 @@ public class DeliveryTest {
         $("[data-test-id='replan-notification'] .button").click();
         $("[data-test-id='success-notification'] .notification__title").shouldBe(visible).shouldBe(exactText("Успешно!"));
         $("[data-test-id='success-notification'] .notification__content").shouldBe(visible).shouldBe(exactText("Встреча успешно запланирована на " + SecondDateMeet));
-        try {
-            Thread.sleep(2000);
-            // Thread.sleep(1000); is Equal to 1 second
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
     }
 }
